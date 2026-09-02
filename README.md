@@ -86,6 +86,8 @@ Einstellungen, Community-Plugins, Durchsuchen, dann nacheinander installieren **
 
 Danach Obsidian einmal neu laden (Strg+P, "Reload app without saving").
 
+**Templater nachprüfen:** Einstellungen, Community-Plugins, Templater. "Template folder location" muss `Templates` sein und "Trigger Templater on new file creation" muss eingeschaltet sein. Steht der Schalter auf aus, bleiben in neuen Notizen die Platzhalter `<% ... %>` stehen und Tasks meldet "unexpanded template text". Reparatur für eine schon angelegte Notiz: Strg+P, "Templater: Replace templates in the active file".
+
 ### 5. Git-Identität setzen (einmalig pro Gerät)
 
 ```bash
