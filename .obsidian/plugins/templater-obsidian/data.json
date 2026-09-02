@@ -18,6 +18,14 @@
       "template": "Templates/Weekly Review.md"
     },
     {
+      "folder": "20 Areas",
+      "template": "Templates/Area.md"
+    },
+    {
+      "folder": "30 Resources",
+      "template": "Templates/Ressource.md"
+    },
+    {
       "folder": "10 Projects",
       "template": "Templates/Projekt.md"
     },

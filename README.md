@@ -31,7 +31,7 @@ Jede Notiz hat im Frontmatter ein Feld `type`. Darauf bauen die Dashboards auf.
 | `type` | Vorlage | Wo |
 |---|---|---|
 | `project` | Projekt | `10 Projects` |
-| `area` | (frei) | `20 Areas` |
+| `area` | Area | `20 Areas` |
 | `resource` | Ressource | `30 Resources` |
 | `note` | Notiz | überall |
 | `meeting` | Meeting | Projekt- oder Area-Ordner |
