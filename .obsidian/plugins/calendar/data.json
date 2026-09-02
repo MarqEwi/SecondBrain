@@ -3,5 +3,8 @@
   "weekStart": "monday",
   "wordsPerDot": 250,
   "showWeeklyNote": true,
+  "weeklyNoteFormat": "",
+  "weeklyNoteTemplate": "",
+  "weeklyNoteFolder": "",
   "localeOverride": "de"
 }
