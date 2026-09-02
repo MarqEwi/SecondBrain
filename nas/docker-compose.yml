@@ -1,0 +1,28 @@
+# Spiegelt das GitHub-Repo stündlich auf die UGREEN NAS.
+# Anleitung: nas/README.md
+services:
+  secondbrain-mirror:
+    image: alpine/git:latest
+    container_name: secondbrain-mirror
+    restart: unless-stopped
+    environment:
+      # Format: https://<github-user>:<token>@github.com/MarqEwi/SecondBrain.git
+      # Token in .env neben dieser Datei ablegen, nie ins Repo committen.
+      REPO_URL: ${REPO_URL}
+      INTERVAL_SECONDS: ${INTERVAL_SECONDS:-3600}
+    volumes:
+      - ./mirror:/mirror
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        while true; do
+          if [ -d /mirror/SecondBrain.git ]; then
+            echo "$(date '+%F %T') pull"
+            git -C /mirror/SecondBrain.git fetch --prune "$REPO_URL" '+refs/heads/*:refs/heads/*'
+          else
+            echo "$(date '+%F %T') erster Klon"
+            git clone --mirror "$REPO_URL" /mirror/SecondBrain.git
+          fi
+          sleep "$INTERVAL_SECONDS"
+        done

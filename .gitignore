@@ -1,0 +1,27 @@
+# --- Obsidian: gerätespezifischer Zustand, nie committen ---
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace/
+.obsidian/cache
+.obsidian/graph.json
+.obsidian/appearance.json.bak
+.trash/
+
+# Konfliktdatei von Obsidian Git
+conflict-files-obsidian-git.md
+
+# --- Betriebssystem-Müll ---
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+@eaDir/
+.smbdelete*
+
+# --- Sonstiges ---
+*.tmp
+*.bak
+
+# NAS-Docker: Zugangsdaten
+nas/.env
+nas/mirror/
