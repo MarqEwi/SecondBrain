@@ -1,4 +1,5 @@
 {
   "baseFontSize": 16,
-  "showViewHeader": true
+  "showViewHeader": true,
+  "showInlineTitle": false
 }
