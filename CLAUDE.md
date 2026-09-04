@@ -13,7 +13,7 @@ Dieses Repo ist ein persönlicher Obsidian-Vault (Second Brain) nach der PARA-Me
 
 ## Konventionen
 
-- Jede Notiz beginnt mit YAML-Frontmatter und mindestens `type`. Werte: `project`, `area`, `resource`, `note`, `meeting`, `person`, `daily`, `weekly`, `moc`.
+- Jede Notiz beginnt mit YAML-Frontmatter und mindestens `type`. Werte: `project`, `area`, `resource`, `note`, `meeting`, `person`, `daily`, `weekly`, `moc`, `steckbrief`, `inventar`.
 - Projekte: `status: active | on-hold | done`, optional `deadline` (ISO-Datum) und `area` als Wikilink in Anführungszeichen, z. B. `area: "[[Finanzen]]"`.
 - Links immer als Wikilinks `[[Notizname]]`, nie als Markdown-Links auf Pfade.
 - Dateinamen sind der Notiztitel, mit Leerzeichen und Umlauten, ohne Präfixe. Keine Sonderzeichen wie `: / \ # ^ [ ] |`.
@@ -44,6 +44,23 @@ Der Nutzer arbeitet meist über Kurzbefehle statt langer Anweisungen: `/notiz`, 
 - Antworten nach einem Kurzbefehl sind ein bis drei Zeilen. Keine Erklärungen, keine Rückfragen, außer etwas ist wirklich mehrdeutig.
 - Keine Passwörter oder Zugangsdaten in den Vault, auch nicht auf Wunsch. Stattdessen auf den Passwortmanager verweisen.
 - Freie Eingaben wie "Notiz: ..." oder "merk dir ..." wie `/notiz` behandeln, "Aufgabe: ..." wie `/aufgabe`.
+
+## Drive-Ablage (Unterlagen aufräumen)
+
+Parallel zum Vault liegen Unterlagen (Nebengewerbe, Kapitalanlage-Immobilie u. a.) auf Google Drive, lokal gespiegelt über "Google Drive für Desktop". Sie werden Thema für Thema aufgeräumt und im Vault als Steckbriefe abgebildet. Projektnotiz: `10 Projects/Google Drive aufräumen.md`.
+
+Feste Regeln, gelten für jeden Durchlauf:
+- **Nichts löschen.** Auch keine leeren Dateien, keine offensichtlichen Kopien. Duplikate (gleiche SHA-256-Prüfsumme) werden nach `_zu_pruefen/` im jeweiligen Themenordner verschoben, das Original bleibt am neuen Platz. Über Löschen entscheidet der Nutzer.
+- **Phasen, nach jeder Phase stoppen** und auf das Wort des Nutzers warten:
+  1. Reiner Lese-Durchlauf: Inventar mit Pfad, Größe, Datum, Prüfsumme, Dokumenttyp (`/inventar`, Skript `scripts/inventar.py`). Nichts verändern.
+  2. Auf Basis des Inventars Namensschema und Zielstruktur vorschlagen. Nichts verändern.
+  3. Erst nach ausdrücklicher Freigabe umbenennen und einsortieren. Vorher eine Zuordnungsliste (alt → neu) als Datei ablegen, damit alles rückverfolgbar ist.
+  4. Steckbriefe im Vault anlegen (`Templates/Steckbrief.md`) und melden, welche Felder aus den Dateien nicht zu füllen sind.
+- Vor Phase 1 sicherstellen: Drive steht auf "gespiegelt" (sonst nur Platzhalter lesbar), Vault liegt außerhalb des Drive-Ordners, gescannte PDFs ohne Textebene sind per `ocrmypdf` aufbereitet oder werden als Lücke gemeldet.
+- Steckbriefe verlinken auf den Ablageort im Drive (Pfad als Code, kein Wikilink) und nennen zu jeder Angabe die Quelldatei. Keine Zahlen oder Fakten ohne Quelle. Persönliche Daten Dritter sparsam.
+- Keine Zugangsdaten, Kontonummern nur maskiert (letzte vier Stellen).
+
+Namensschema und Zielstruktur: **noch offen**, werden in Phase 2 je Thema festgelegt und danach hier eingetragen, damit spätere Durchläufe sich daran halten.
 
 ## Git
 

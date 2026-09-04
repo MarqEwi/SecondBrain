@@ -180,6 +180,8 @@ Liegen in `.claude/commands/` und gelten in jeder Claude-Code-Sitzung auf diesem
 | `/woche` | Wochenrückblick vorbereiten: Erledigtes, Überfälliges, Projekte ohne nächsten Schritt |
 | `/suche <Frage>` | Frage nur aus dem Vault beantworten, mit Quellen |
 
+`/inventar "<Pfad>" <Thema>` gehört zum Projekt "Google Drive aufräumen": liest einen Drive-Ordner nur und schreibt ein Inventar mit Prüfsummen nach `Attachments/inventar/`. Regeln und Phasen in der `CLAUDE.md`.
+
 Freier Text funktioniert auch: "merk dir, dass ..." wird wie `/notiz` behandelt, "Aufgabe: ..." wie `/aufgabe`.
 
 ## Arbeitsweise
