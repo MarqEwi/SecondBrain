@@ -7,6 +7,8 @@ Dieses Repo ist ein persönlicher Obsidian-Vault (Second Brain) nach der PARA-Me
 - `00 Inbox` ungesortiert · `10 Projects` Vorhaben mit Ende · `20 Areas` dauerhafte Bereiche · `30 Resources` Wissen · `40 Archive` erledigt
 - `Journal/Daily/YYYY-MM-DD.md`, `Journal/Weekly/YYYY-Www.md`
 - `Templates/` Templater-Vorlagen, `Attachments/` Anhänge, `Home.md` Dashboard
+- `30 Resources/Personen/` Personennotizen (`type: person`)
+- `.claude/commands/` Kurzbefehle für den Nutzer, siehe unten
 - Jeder Ordner hat eine gleichnamige Übersichtsnotiz (`Projects.md`, `Areas.md`, ...) mit Dataview-Abfragen. Diese Notizen haben `type: moc`.
 
 ## Konventionen
@@ -33,7 +35,19 @@ Dieses Repo ist ein persönlicher Obsidian-Vault (Second Brain) nach der PARA-Me
 - Inhalte aus PDFs oder Web in Resource-Notizen überführen
 - Wochenrückblicke vorbereiten: offene Aufgaben und Projekte ohne nächsten Schritt auflisten
 
+## Kurzbefehle
+
+Der Nutzer arbeitet meist über Kurzbefehle statt langer Anweisungen: `/notiz`, `/idee`, `/aufgabe`, `/link`, `/person`, `/projekt`, `/heute`, `/aufraeumen`, `/woche`, `/suche`. Die Definitionen liegen in `.claude/commands/`. Gemeinsame Regeln:
+
+- Der Nutzer will nichts formatieren. Titel, Frontmatter, Tags, Links und Ablageort sind deine Aufgabe.
+- Inhalte nur säubern, nie erweitern oder interpretieren. Nichts erfinden, nur auf Notizen verlinken, die existieren.
+- Antworten nach einem Kurzbefehl sind ein bis drei Zeilen. Keine Erklärungen, keine Rückfragen, außer etwas ist wirklich mehrdeutig.
+- Keine Passwörter oder Zugangsdaten in den Vault, auch nicht auf Wunsch. Stattdessen auf den Passwortmanager verweisen.
+- Freie Eingaben wie "Notiz: ..." oder "merk dir ..." wie `/notiz` behandeln, "Aufgabe: ..." wie `/aufgabe`.
+
 ## Git
 
-- Arbeiten auf dem vorgegebenen Branch, klare Commit-Messages, danach pushen.
-- Der Nutzer synchronisiert den Vault über das Plugin Obsidian Git. Vor größeren Umbauten darauf hinweisen, dass er vorher in Obsidian pushen und danach pullen soll.
+- Arbeiten auf dem vorgegebenen Branch, klare Commit-Messages auf Deutsch.
+- **Cloud-Session** (kein Obsidian auf diesem Rechner, Repo frisch geklont): zu Beginn `git pull`, nach jeder abgeschlossenen Änderung `git add -A && git commit && git push`. Sonst kommt nichts beim Nutzer an.
+- **Lokale Session** (Vault-Ordner auf dem Gerät des Nutzers): Dateien einfach schreiben. Das Plugin Obsidian Git committet und pusht alle zehn Minuten selbst. Kein eigenes `git push` nötig, `git pull` vor größeren Umbauten schadet nicht.
+- Vor größeren Umbauten darauf hinweisen, dass der Nutzer auf seinen anderen Geräten vorher pushen und danach pullen soll.

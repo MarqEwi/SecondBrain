@@ -3,14 +3,14 @@ type: area
 created: 2026-09-04
 tags:
   - area
-  - arbeit
+  - familie
 ---
-# Bundeswehr
+# Familie
 
-Alles rund um den Dienst: Vorgänge, Lehrgänge, Ansprechpartner, Vorschriften, Termine.
+Familie und nahe Menschen, darunter alles, was meinen Vater betrifft: Termine, Unterlagen, Absprachen, Dinge, die ich mir merken muss.
 
 ## Standard
-Termine und Fristen sind erfasst, laufende Vorgänge haben einen nächsten Schritt.
+Ich weiß, was ansteht, und nichts Wichtiges geht zwischen Terminen verloren.
 
 ## Projekte in dieser Area
 ```dataview
@@ -23,7 +23,7 @@ SORT status ASC
 ## Offene Aufgaben hier
 ```tasks
 not done
-path includes Bundeswehr
+path includes Familie
 short mode
 ```
 

@@ -4,13 +4,14 @@ created: 2026-09-04
 tags:
   - area
   - arbeit
+  - apps
 ---
-# Bundeswehr
+# MERCwerk
 
-Alles rund um den Dienst: Vorgänge, Lehrgänge, Ansprechpartner, Vorschriften, Termine.
+Meine App-Familie (BFT Tool, PFT Tool, SGT Rechner und Nachfolger): Ideen, Releases, Store, AdMob, Nutzerfeedback.
 
 ## Standard
-Termine und Fristen sind erfasst, laufende Vorgänge haben einen nächsten Schritt.
+Jede App hat eine aktuelle Version im Store, offene Bugs und Ideen stehen als Aufgaben in den Projekten.
 
 ## Projekte in dieser Area
 ```dataview
@@ -23,7 +24,7 @@ SORT status ASC
 ## Offene Aufgaben hier
 ```tasks
 not done
-path includes Bundeswehr
+path includes MERCwerk
 short mode
 ```
 

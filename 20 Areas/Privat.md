@@ -3,14 +3,14 @@ type: area
 created: 2026-09-04
 tags:
   - area
-  - arbeit
+  - privat
 ---
-# Bundeswehr
+# Privat
 
-Alles rund um den Dienst: Vorgänge, Lehrgänge, Ansprechpartner, Vorschriften, Termine.
+Ich selbst: Gesundheit, Sport, Meditation, Lesen, Hobbys, Reisen.
 
 ## Standard
-Termine und Fristen sind erfasst, laufende Vorgänge haben einen nächsten Schritt.
+Routinen laufen, und ich habe Zeit für Dinge, die mir guttun.
 
 ## Projekte in dieser Area
 ```dataview
@@ -23,7 +23,7 @@ SORT status ASC
 ## Offene Aufgaben hier
 ```tasks
 not done
-path includes Bundeswehr
+path includes Privat
 short mode
 ```
 

@@ -35,7 +35,7 @@ Jede Notiz hat im Frontmatter ein Feld `type`. Darauf bauen die Dashboards auf.
 | `resource` | Ressource | `30 Resources` |
 | `note` | Notiz | überall |
 | `meeting` | Meeting | Projekt- oder Area-Ordner |
-| `person` | Person | `30 Resources/Personen` (Ordner bei Bedarf anlegen) |
+| `person` | Person | `30 Resources/Personen` |
 | `daily` / `weekly` | Daily Note / Weekly Review | `Journal` |
 
 Projekte haben zusätzlich `status: active | on-hold | done` und optional `deadline` und `area` (Link auf die Area-Notiz).
@@ -148,12 +148,39 @@ Die NAS zieht selbstständig jede Stunde den aktuellen Stand von GitHub. Anleitu
 git clone //<NAS-Name-oder-IP>/Backup/SecondBrain.git SecondBrain
 ```
 
-## Handy
+## Handy (Android)
 
-- **Android:** Obsidian aus dem Play Store, dann Obsidian Git im Vault aktivieren. Das Plugin kann auf Android selbst klonen (Befehl "Clone an existing remote repo"), dafür ein GitHub-Token mit `repo`-Recht anlegen. Läuft, ist aber langsamer als auf dem PC.
-- **iPhone:** Obsidian Git ist auf iOS eingeschränkt. Alternativen: [Obsidian Sync](https://obsidian.md/sync) (kostenpflichtig) oder eine App wie Working Copy, die das Repo klont und in Obsidian einbindet.
+Obsidian läuft auf dem Handy mit demselben Vault, das Git-Plugin gleicht ihn ab. Einmalige Einrichtung, etwa zehn Minuten:
 
-Wenn Handy-Sync wichtig wird, ist Syncthing über die NAS die bessere Lösung; das lässt sich später ergänzen.
+1. **Token anlegen** (am PC, einmalig): GitHub, Settings, Developer settings, Personal access tokens, Fine-grained tokens, "Generate new token". Repository access nur `SecondBrain`, Permissions "Contents: Read and write". Token kopieren, er wird nur einmal angezeigt.
+2. **Obsidian** aus dem Play Store installieren, öffnen, "Neuen Vault erstellen", Name `SteveVault`, Speicherort im Gerätespeicher (nicht auf SD-Karte, das ist deutlich langsamer).
+3. Einstellungen, Community-Plugins, eingeschränkten Modus deaktivieren, "Durchsuchen", **Git** installieren und aktivieren.
+4. Befehlspalette öffnen (nach unten wischen oder das Symbol oben rechts), `Git: Clone an existing remote repo` wählen. URL `https://github.com/MarqEwi/SecondBrain.git`, als Benutzername `MarqEwi`, als Passwort den Token. Bei "Depth" den Vorschlag lassen, bei der Frage nach dem Ordner den Vault-Root wählen. Danach die App wie verlangt neu starten.
+5. Nach dem Neustart sind alle Plugins und Einstellungen da. In den Git-Einstellungen unter "Authentication" Name `Marq` und E-Mail eintragen, sonst lehnt GitHub Commits ab.
+6. Test: eine Zeile in eine Notiz schreiben, Befehlspalette, `Git: Commit-and-sync`. Am Surface nach dem nächsten Pull nachschauen.
+
+Hinweise: Das Git-Plugin auf Android ist langsamer als am PC, bei einem großen Vault dauert der erste Klon ein paar Minuten. Auto-Pull und Auto-Push laufen wie am PC alle zehn Minuten, solange Obsidian im Vordergrund ist. Vor dem Schließen der App einmal `Git: Commit-and-sync`, dann ist alles oben.
+
+**Der schnellste Weg vom Handy aus:** Claude-App öffnen, Code, Cloud-Sitzung auf dem Repo `SecondBrain`, dann einfach diktieren: `/notiz Papa hat Donnerstag Arzttermin, Unterlagen mitnehmen`. Claude legt die Notiz an und pusht, ohne dass du Obsidian aufmachen musst. Die Kurzbefehle stehen im nächsten Abschnitt.
+
+## Kurzbefehle für Claude
+
+Liegen in `.claude/commands/` und gelten in jeder Claude-Code-Sitzung auf diesem Vault, lokal wie in der Cloud. Du tippst oder diktierst nur den Inhalt, Claude macht Titel, Ablage, Frontmatter, Tags und Links.
+
+| Befehl | Was passiert |
+|---|---|
+| `/notiz <Text>` | Notiz in die Inbox, sauber formatiert, verlinkt mit passenden Projekten, Areas, Personen |
+| `/idee <Text>` | Wie Notiz, plus "Warum" und "Nächster Schritt", hängt sich an Projekt oder Area |
+| `/aufgabe <Text> bis Freitag für <Projekt>` | Task mit Fälligkeit in die Tagesnotiz oder unter "Nächste Schritte" des Projekts |
+| `/link <URL> <Kommentar>` | Ressource mit Titel und Kurzfassung in `30 Resources` |
+| `/person <Name>, <Rolle>, <Kontext>` | Personennotiz anlegen oder ergänzen |
+| `/projekt <Name>, <Ziel>, <Area>, <erste Schritte>` | Neues Projekt mit Ziel, Area und Tasks |
+| `/heute` | Tagesnotiz anlegen, fällige Aufgaben und Projekte ohne nächsten Schritt zusammenfassen |
+| `/aufraeumen` | Inbox durchgehen, Einsortierung vorschlagen, nach Freigabe verschieben |
+| `/woche` | Wochenrückblick vorbereiten: Erledigtes, Überfälliges, Projekte ohne nächsten Schritt |
+| `/suche <Frage>` | Frage nur aus dem Vault beantworten, mit Quellen |
+
+Freier Text funktioniert auch: "merk dir, dass ..." wird wie `/notiz` behandelt, "Aufgabe: ..." wie `/aufgabe`.
 
 ## Arbeitsweise
 

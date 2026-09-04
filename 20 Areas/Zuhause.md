@@ -3,14 +3,14 @@ type: area
 created: 2026-09-04
 tags:
   - area
-  - arbeit
+  - zuhause
 ---
-# Bundeswehr
+# Zuhause
 
-Alles rund um den Dienst: Vorgänge, Lehrgänge, Ansprechpartner, Vorschriften, Termine.
+Wohnung, Haushalt, Geräte, Reparaturen, Netzwerk und NAS.
 
 ## Standard
-Termine und Fristen sind erfasst, laufende Vorgänge haben einen nächsten Schritt.
+Alles funktioniert, Ersatzteile und Anleitungen sind auffindbar.
 
 ## Projekte in dieser Area
 ```dataview
@@ -23,7 +23,7 @@ SORT status ASC
 ## Offene Aufgaben hier
 ```tasks
 not done
-path includes Bundeswehr
+path includes Zuhause
 short mode
 ```
 

@@ -3,14 +3,14 @@ type: area
 created: 2026-09-04
 tags:
   - area
-  - arbeit
+  - finanzen
 ---
-# Bundeswehr
+# Finanzen
 
-Alles rund um den Dienst: Vorgänge, Lehrgänge, Ansprechpartner, Vorschriften, Termine.
+Konten, Verträge, Versicherungen, Abos, Steuern. Keine Zugangsdaten, die liegen im Passwortmanager.
 
 ## Standard
-Termine und Fristen sind erfasst, laufende Vorgänge haben einen nächsten Schritt.
+Verträge und Kündigungsfristen sind bekannt, keine Überraschungen beim Kontoauszug.
 
 ## Projekte in dieser Area
 ```dataview
@@ -23,7 +23,7 @@ SORT status ASC
 ## Offene Aufgaben hier
 ```tasks
 not done
-path includes Bundeswehr
+path includes Finanzen
 short mode
 ```
 
